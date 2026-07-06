@@ -72,5 +72,42 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5kL_OTRnC7otiuGNqmQoi3LFVQ93gnk66dVZz2BIXwtCQ1ChU44ZEYe4&s=10",
       "stock": 22
     }
+  ],
+  "carousel": [
+    {
+      "id": 1,
+      "brand": "KFC",
+      "title": "Balde Familiar KFC",
+      "subtitle": "16 piezas de pollo broaster crocante para compartir",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuHTqHQt0nVmGps8ezYqgtLHrmhbcac6n5tSIPIYwzEQ&s"
+    },
+    {
+      "id": 2,
+      "brand": "Popeyes",
+      "title": "Pollo Picante Popeyes",
+      "subtitle": "El toque cajún que solo Popeyes tiene",
+      "image": "https://www.popeyes.com.pe/media/catalog/product/2/1/2146467715.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg"
+    },
+    {
+      "id": 3,
+      "brand": "Pizza Hut",
+      "title": "Pizza Suprema Familiar",
+      "subtitle": "Pepperoni, carne, pimientos y champiñones",
+      "image": "https://static.wixstatic.com/media/79df83_f10333cad89d422b847618ac69ed1cb4~mv2.jpg/v1/fill/w_560,h_374,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/JAMON-Y-DURAZNO-min.jpg"
+    },
+    {
+      "id": 4,
+      "brand": "KFC",
+      "title": "Twister Clásico KFC",
+      "subtitle": "Wrap crocante con la salsa especial de la casa",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNDYRciIdOiFRNDb_qDqdCcJpOdKwxhp5laC-wKtBwVA&s=10"
+    },
+    {
+      "id": 5,
+      "brand": "Popeyes",
+      "title": "Sandwich Cajún Popeyes",
+      "subtitle": "Pollo crocante con mayonesa cajún en pan brioche",
+      "image": "https://www.popeyes.com.pe/media/catalog/product/2/1/2146466506.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg"
+    }
   ]
 }

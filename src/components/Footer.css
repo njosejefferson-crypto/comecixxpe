@@ -1,0 +1,65 @@
+.footer {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--cx-charcoal);
+  color: #f2e9e0;
+}
+
+.footer__row {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer__brand {
+  font-weight: 700;
+}
+
+.footer__copy {
+  font-size: 0.82rem;
+  color: #cbb9ad;
+}
+
+.footer__link {
+  background: none;
+  border: none;
+  color: var(--cx-gold);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__terms {
+  max-width: 700px;
+  margin: 1.25rem auto 0;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.footer__terms-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.footer__terms-list {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #e8ddd4;
+}

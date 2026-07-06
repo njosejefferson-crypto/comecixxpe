@@ -1,59 +1,59 @@
-# EcommerceApp
+# ComeCix 🍗
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+E-commerce de comida rápida peruana (KFC, Popeyes, Pizza Hut) hecho con **React + Vite**,
+consumiendo un backend simulado con **json-server**.
 
-## Development server
+## Stack técnico
 
-To start a local development server, run:
+- **React + Vite** — interfaz y bundler.
+- **React Router DOM** — navegación y rutas protegidas (`/cart`, `/checkout`).
+- **Axios** — peticiones HTTP, con un interceptor centralizado que normaliza los errores de
+  todas las llamadas (catálogo, login/registro, pedidos) para nunca dejar una pantalla en blanco.
+- **Context API** (`AuthContext`, `CartContext`) — estado global de sesión y carrito, persistido
+  en `localStorage`.
+- **json-server** — simula el backend con tres archivos de datos independientes:
+  - `db.json` → productos y carrusel (puerto 3000)
+  - `users.json` → usuarios (puerto 3001)
+  - `orders.json` → pedidos (puerto 3002)
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Instalación y ejecución
 
 ```bash
-ng generate --help
+npm install
+npm run dev
 ```
 
-## Building
-
-To build the project run:
+`npm run dev` levanta a la vez el frontend (Vite, `http://localhost:5173`) y los 3 servidores
+de json-server. Si prefieres correrlos por separado:
 
 ```bash
-ng build
+npm run server   # solo el backend (productos, usuarios, pedidos)
+npx vite         # solo el frontend
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Build de producción
 
 ```bash
-ng test
+npm run build
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Despliegue a GitHub Pages
 
 ```bash
-ng e2e
+npm run deploy
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Esto compila el proyecto y publica `dist/` en la rama `gh-pages`. Nota: como el backend
+(json-server) solo corre en tu máquina, el catálogo/carrito no cargarán datos para otros
+visitantes de la URL pública a menos que también tengan `npm run server` corriendo localmente.
 
-## Additional Resources
+## Funcionalidades
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Catálogo con buscador y filtro por categoría (marca), carrusel de destacados.
+- Detalle de producto.
+- Registro (valida email duplicado) y login (con manejo de credenciales incorrectas).
+- Sesión persistente en `localStorage`.
+- Carrito: agregar, incrementar/disminuir cantidad, eliminar, vaciar.
+- Rutas protegidas: `/cart` y `/checkout` solo accesibles con sesión iniciada.
+- Checkout con dos métodos de pago: **Efectivo** (confirma directo) y **Yape** (QR + código de
+  operación + captura de pantalla comprimida antes de enviarse).

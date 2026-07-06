@@ -1,6 +1,5 @@
 {
   "users": [
-
     {
       "id": "kk98TLamdH4",
       "name": "Jose Niño Anton",
@@ -12,6 +11,12 @@
       "email": "maria.test@tienda.com",
       "password": "test1234",
       "id": "NtIB4vH3EBE"
+    },
+    {
+      "name": "React Test",
+      "email": "react.test@comecix.com",
+      "password": "test1234",
+      "id": "SD5Nj8dcmeM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
