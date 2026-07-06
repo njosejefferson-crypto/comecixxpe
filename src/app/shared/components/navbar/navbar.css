@@ -1,0 +1,137 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(120deg, var(--cx-red-dark) 0%, var(--cx-red) 55%, var(--cx-orange) 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(161, 29, 46, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+}
+
+.navbar__logo {
+  font-size: 1.4rem;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar__link {
+  position: relative;
+  color: #ffe9c7;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: var(--cx-gold);
+  transition: width 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: #fff;
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 100%;
+}
+
+.navbar__link--active {
+  color: #fff;
+}
+
+.navbar__badge {
+  position: absolute;
+  top: -0.65rem;
+  right: -0.95rem;
+  background: var(--cx-gold);
+  color: var(--cx-charcoal);
+  font-size: 0.7rem;
+  min-width: 1.1rem;
+  text-align: center;
+  padding: 0.1rem 0.35rem;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px var(--cx-red-dark);
+  font-weight: 700;
+}
+
+.navbar__auth {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.navbar__user {
+  color: #ffe9c7;
+  font-size: 0.9rem;
+}
+
+.navbar__btn {
+  background: var(--cx-gold);
+  color: var(--cx-charcoal);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.navbar__btn:hover {
+  background: var(--cx-gold-dark);
+  transform: translateY(-1px);
+}
+
+.navbar__btn--outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.navbar__btn--outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 720px) {
+  .navbar {
+    flex-wrap: wrap;
+    row-gap: 0.6rem;
+  }
+
+  .navbar__links {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1.25rem;
+  }
+}

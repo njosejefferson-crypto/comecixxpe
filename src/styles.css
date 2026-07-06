@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --cx-red: #d7263d;
+  --cx-red-dark: #a11d2e;
+  --cx-orange: #ff7a00;
+  --cx-gold: #ffc93c;
+  --cx-gold-dark: #ffb100;
+  --cx-cream: #fff8e8;
+  --cx-cream-dark: #fdecc8;
+  --cx-charcoal: #2b1b17;
+  --cx-muted: #8c7b75;
+  --cx-border: #f0ded0;
+  --cx-success: #2e8b57;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--cx-cream);
+  font-family:
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  color: var(--cx-charcoal);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}

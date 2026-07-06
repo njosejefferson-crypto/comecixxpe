@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <a class="navbar__brand" routerLink="/products">
+    <span class="navbar__logo">🍗</span>
+    <span class="navbar__title">ComeCix</span>
+  </a>
+
+  <div class="navbar__links">
+    <a class="navbar__link" routerLink="/products" routerLinkActive="navbar__link--active">
+      Catálogo
+    </a>
+    <a class="navbar__link" routerLink="/cart" routerLinkActive="navbar__link--active">
+      Carrito
+      @if (cartCount() > 0) {
+        <span class="navbar__badge">{{ cartCount() }}</span>
+      }
+    </a>
+  </div>
+
+  <div class="navbar__auth">
+    @if (isAuthenticated()) {
+      <span class="navbar__user">Hola, {{ currentUser()?.name }}</span>
+      <button class="navbar__btn navbar__btn--outline" type="button" (click)="logout()">
+        Cerrar sesión
+      </button>
+    } @else {
+      <a class="navbar__btn" routerLink="/login">Login</a>
+    }
+  </div>
+</nav>

@@ -1,0 +1,51 @@
+<section class="cart-page">
+  <h1 class="cart-page__title">Tu carrito</h1>
+
+  @if (items().length === 0) {
+    <div class="cart-page__empty">
+      <p>Tu carrito está vacío.</p>
+      <a class="cart-page__link" routerLink="/products">Ir al catálogo</a>
+    </div>
+  } @else {
+    <div class="cart-page__list">
+      @for (item of items(); track item.product.id) {
+        <article class="cart-item">
+          <img class="cart-item__image" [src]="item.product.image" [alt]="item.product.name" />
+
+          <div class="cart-item__info">
+            <h2 class="cart-item__name">{{ item.product.name }}</h2>
+            <p class="cart-item__price">{{ item.product.price | currency: 'PEN' : 'S/ ' }}</p>
+          </div>
+
+          <div class="cart-item__quantity">
+            <button class="cart-item__qty-btn" type="button" (click)="decrement(item.product.id)">
+              -
+            </button>
+            <span class="cart-item__qty-value">{{ item.quantity }}</span>
+            <button class="cart-item__qty-btn" type="button" (click)="increment(item.product.id)">
+              +
+            </button>
+          </div>
+
+          <p class="cart-item__subtotal">
+            {{ item.product.price * item.quantity | currency: 'PEN' : 'S/ ' }}
+          </p>
+
+          <button class="cart-item__remove" type="button" (click)="removeItem(item.product.id)">
+            Eliminar
+          </button>
+        </article>
+      }
+    </div>
+
+    <div class="cart-page__summary">
+      <button class="cart-page__clear" type="button" (click)="clearCart()">Vaciar carrito</button>
+      <div class="cart-page__total">
+        <span>{{ totalItems() }} artículo(s)</span>
+        <strong>{{ totalPrice() | currency: 'PEN' : 'S/ ' }}</strong>
+      </div>
+    </div>
+
+    <a class="cart-page__checkout" routerLink="/checkout">Pagar</a>
+  }
+</section>

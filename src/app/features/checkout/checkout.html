@@ -1,0 +1,114 @@
+<section class="checkout">
+  <a class="checkout__back" routerLink="/cart">&larr; Volver al carrito</a>
+
+  <h1 class="checkout__title">Pagar pedido</h1>
+
+  @if (successMessage()) {
+    <div class="checkout__success">
+      <p>{{ successMessage() }}</p>
+    </div>
+  } @else if (items().length === 0) {
+    <div class="checkout__empty">
+      <p>Tu carrito está vacío.</p>
+      <a class="checkout__link" routerLink="/products">Ir al catálogo</a>
+    </div>
+  } @else {
+    <div class="checkout__layout">
+      <div class="checkout__summary">
+        <h2 class="checkout__subtitle">Resumen del pedido</h2>
+        <ul class="checkout__items">
+          @for (item of items(); track item.product.id) {
+            <li class="checkout__item">
+              <span>{{ item.quantity }}x {{ item.product.name }}</span>
+              <span>{{ item.product.price * item.quantity | currency: 'PEN' : 'S/ ' }}</span>
+            </li>
+          }
+        </ul>
+        <div class="checkout__total">
+          <span>Total a pagar</span>
+          <strong>{{ total() | currency: 'PEN' : 'S/ ' }}</strong>
+        </div>
+      </div>
+
+      <div class="checkout__payment">
+        <h2 class="checkout__subtitle">Método de pago</h2>
+
+        <div class="checkout__methods">
+          <button
+            type="button"
+            class="checkout__method"
+            [class.checkout__method--active]="paymentMethod() === 'efectivo'"
+            (click)="selectPaymentMethod('efectivo')"
+          >
+            💵 Efectivo
+          </button>
+          <button
+            type="button"
+            class="checkout__method"
+            [class.checkout__method--active]="paymentMethod() === 'yape'"
+            (click)="selectPaymentMethod('yape')"
+          >
+            📱 Yape
+          </button>
+        </div>
+
+        @if (paymentMethod() === 'efectivo') {
+          <div class="checkout__panel">
+            <p>Pagarás <strong>{{ total() | currency: 'PEN' : 'S/ ' }}</strong> en efectivo al recibir tu pedido.</p>
+          </div>
+        } @else {
+          <div class="checkout__panel checkout__panel--yape">
+            @if (useCustomQr()) {
+              <img
+                class="yape-card__image"
+                src="yape-qr.jpg"
+                (error)="onCustomQrError()"
+                alt="Código QR de Yape"
+              />
+            } @else {
+              <div class="yape-card">
+                <div class="yape-card__frame">
+                  <img class="checkout__qr" [src]="yapeQrUrl()" alt="Código QR de Yape" />
+                  <span class="yape-card__badge">S/</span>
+                </div>
+                <span class="yape-card__cta">Paga aquí con Yape</span>
+              </div>
+            }
+            <p class="checkout__yape-phone">Yapea al <strong>{{ yapePhone }}</strong></p>
+            <p class="checkout__yape-amount">Monto: {{ total() | currency: 'PEN' : 'S/ ' }}</p>
+
+            <label class="checkout__label" for="yapeCode">Código de operación</label>
+            <input
+              class="checkout__input"
+              id="yapeCode"
+              type="text"
+              placeholder="Ej. 000123456"
+              [value]="yapeOperationCode()"
+              (input)="yapeOperationCode.set($any($event.target).value)"
+            />
+
+            <label class="checkout__label" for="yapeCapture">Captura del pago</label>
+            <input
+              class="checkout__input checkout__input--file"
+              id="yapeCapture"
+              type="file"
+              accept="image/*"
+              (change)="onCaptureSelected($event)"
+            />
+            @if (yapeCaptureData()) {
+              <img class="checkout__capture-preview" [src]="yapeCaptureData()" alt="Captura del comprobante" />
+            }
+          </div>
+        }
+
+        @if (errorMessage()) {
+          <p class="checkout__error">{{ errorMessage() }}</p>
+        }
+
+        <button class="checkout__confirm" type="button" [disabled]="submitting()" (click)="confirmOrder()">
+          {{ submitting() ? 'Procesando...' : 'Confirmar pedido' }}
+        </button>
+      </div>
+    </div>
+  }
+</section>

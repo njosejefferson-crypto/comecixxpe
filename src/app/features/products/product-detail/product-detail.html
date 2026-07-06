@@ -1,0 +1,29 @@
+<section class="product-detail">
+  <a class="product-detail__back" routerLink="/products">&larr; Volver al catálogo</a>
+
+  @if (loading()) {
+    <p class="product-detail__state">Cargando producto...</p>
+  } @else if (error()) {
+    <p class="product-detail__state product-detail__state--error">{{ error() }}</p>
+  } @else if (product(); as product) {
+    <div class="product-detail__card">
+      <img class="product-detail__image" [src]="product.image" [alt]="product.name" />
+
+      <div class="product-detail__info">
+        <span class="product-detail__category">{{ product.category }}</span>
+        <h1 class="product-detail__name">{{ product.name }}</h1>
+        <p class="product-detail__description">{{ product.description }}</p>
+        <p class="product-detail__price">{{ product.price | currency: 'PEN' : 'S/ ' }}</p>
+        <p class="product-detail__stock">Stock disponible: {{ product.stock }}</p>
+
+        <button class="product-detail__btn" type="button" (click)="addToCart()">
+          Añadir al carrito
+        </button>
+
+        @if (addedMessage()) {
+          <p class="product-detail__added">Producto añadido al carrito.</p>
+        }
+      </div>
+    </div>
+  }
+</section>

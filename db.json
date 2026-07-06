@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Balde Familiar KFC",
+      "description": "Balde con 16 piezas de pollo broaster crocante, receta original de la casa.",
+      "price": 79.9,
+      "category": "KFC",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuHTqHQt0nVmGps8ezYqgtLHrmhbcac6n5tSIPIYwzEQ&s",
+      "stock": 20
+    },
+    {
+      "id": "2",
+      "name": "Twister Clásico KFC",
+      "description": "Wrap crocante con pollo, lechuga y salsa especial de la casa.",
+      "price": 15.9,
+      "category": "KFC",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNDYRciIdOiFRNDb_qDqdCcJpOdKwxhp5laC-wKtBwVA&s=10",
+      "stock": 35
+    },
+    {
+      "id": "3",
+      "name": "Combo Box Individual KFC",
+      "description": "2 piezas de pollo, papas fritas y bebida personal.",
+      "price": 22.9,
+      "category": "KFC",
+      "image": "https://cdn.tictuk.com/06e5ab0b-080f-61c9-122a-b33a808502a4/81329269-a036-6396-6a24-d24ac6112970.jpeg?a=14322ac1-2736-fa0b-a83d-ba30f361942a",
+      "stock": 30
+    },
+    {
+      "id": "4",
+      "name": "Pollo Picante Popeyes",
+      "description": "Pollo Popeyes con el toque picante cajún que lo caracteriza.",
+      "price": 24.9,
+      "category": "Popeyes",
+      "image": "https://www.popeyes.com.pe/media/catalog/product/2/1/2146467715.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg",
+      "stock": 25
+    },
+    {
+      "id": "5",
+      "name": "Sandwich Cajún Popeyes",
+      "description": "Sandwich de pollo crocante con mayonesa cajún y pan brioche.",
+      "price": 18.9,
+      "category": "Popeyes",
+      "image": "https://www.popeyes.com.pe/media/catalog/product/2/1/2146466506.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg",
+      "stock": 28
+    },
+    {
+      "id": "7",
+      "name": "Pizza Suprema Familiar",
+      "description": "Pizza familiar con pepperoni, carne, pimientos y champiñones.",
+      "price": 59.9,
+      "category": "Pizza Hut",
+      "image": "https://static.wixstatic.com/media/79df83_f10333cad89d422b847618ac69ed1cb4~mv2.jpg/v1/fill/w_560,h_374,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/JAMON-Y-DURAZNO-min.jpg",
+      "stock": 15
+    },
+    {
+      "id": "8",
+      "name": "Pizza Hawaiana Mediana",
+      "description": "Pizza mediana con jamón, piña y queso mozzarella.",
+      "price": 39.9,
+      "category": "Pizza Hut",
+      "image": "https://www.papajohns.com.pe/media/catalog/product/p/j/pj11216.png",
+      "stock": 20
+    },
+    {
+      "id": "9",
+      "name": "Pan Pizza Pepperoni",
+      "description": "Masa gruesa estilo pan pizza cubierta con doble pepperoni.",
+      "price": 34.9,
+      "category": "Pizza Hut",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5kL_OTRnC7otiuGNqmQoi3LFVQ93gnk66dVZz2BIXwtCQ1ChU44ZEYe4&s=10",
+      "stock": 22
+    }
+  ]
+}

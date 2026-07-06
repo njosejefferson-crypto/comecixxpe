@@ -1,0 +1,51 @@
+<section class="product-list">
+  <h1 class="product-list__title">Nuestro catálogo</h1>
+
+  <div class="product-list__filters">
+    <input
+      class="product-list__search"
+      type="text"
+      placeholder="Buscar productos..."
+      [ngModel]="searchTerm()"
+      (ngModelChange)="onSearchChange($event)"
+    />
+
+    <select
+      class="product-list__select"
+      [ngModel]="selectedCategory()"
+      (ngModelChange)="onCategoryChange($event)"
+    >
+      @for (category of categories(); track category) {
+        <option [value]="category">{{ category === 'all' ? 'Todas las categorías' : category }}</option>
+      }
+    </select>
+  </div>
+
+  @if (loading()) {
+    <p class="product-list__state">Cargando productos...</p>
+  } @else if (error()) {
+    <p class="product-list__state product-list__state--error">{{ error() }}</p>
+  } @else if (filteredProducts().length === 0) {
+    <p class="product-list__state">No se encontraron productos con esos criterios.</p>
+  } @else {
+    <div class="product-list__grid">
+      @for (product of filteredProducts(); track product.id) {
+        <article class="product-card" (click)="viewDetail(product)">
+          <img class="product-card__image" [src]="product.image" [alt]="product.name" />
+          <div class="product-card__body">
+            <h2 class="product-card__name">{{ product.name }}</h2>
+            <span class="product-card__category">{{ product.category }}</span>
+            <p class="product-card__price">{{ product.price | currency: 'PEN' : 'S/ ' }}</p>
+            <button
+              class="product-card__btn"
+              type="button"
+              (click)="addToCart($event, product)"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>
