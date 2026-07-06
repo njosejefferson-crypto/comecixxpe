@@ -20,16 +20,18 @@ consumiendo un backend simulado con **json-server**.
 
 ```bash
 npm install
+npm run server
 npm run dev
 ```
 
-`npm run dev` levanta a la vez el frontend (Vite, `http://localhost:5173`) y los 3 servidores
-de json-server. Si prefieres correrlos por separado:
+- `npm install` — instala las dependencias.
+- `npm run server` — levanta el backend simulado: 3 instancias de json-server
+  (productos+carrusel en `:3000`, usuarios en `:3001`, pedidos en `:3002`). Déjalo corriendo en
+  una terminal.
+- `npm run dev` — levanta el frontend (Vite) en `http://localhost:5173`, en otra terminal.
 
-```bash
-npm run server   # solo el backend (productos, usuarios, pedidos)
-npx vite         # solo el frontend
-```
+Necesitas las dos terminales abiertas a la vez (backend + frontend) para que la app funcione.
+Si prefieres un solo comando que levante ambos a la vez, usa `npm run dev:all`.
 
 ## Build de producción
 
